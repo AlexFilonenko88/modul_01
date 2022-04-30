@@ -10,6 +10,8 @@ if (rain === 1) {
     console.log("Дождя нет!");
 }
 
+// Math.random() >= 0.5 ? console.log("Пошёл дождь. Возьмите зонт!") : console.log("Дождя нет!");
+
 // 2
 
 const numberOfPointsMath = prompt("Введите кол-во баллов по математике:");
