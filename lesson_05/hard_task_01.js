@@ -1,9 +1,12 @@
 'use strict'
 
-// В отдельном файле hard_task_01
-
-// Напишите функцию, вычисляющую наибольший общий делитель двух чисел
-
 const nod = (n, m) => {
-
+    if (m > 0) {
+        let k = n % m;
+        return nod(m, k);
+    } else {
+        return Math.abs(n);
+    };
 };
+
+console.log(nod(10, 5));
