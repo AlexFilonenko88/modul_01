@@ -9,4 +9,4 @@ const isPrime = number => {
     return true;
 }
 
-console.log(isPrime());
+console.log(isPrime(10));
