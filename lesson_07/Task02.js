@@ -9,7 +9,7 @@ const getAverageValue = arr => {
         sum += arr[i];
     }
 
-    return sum / arr.length;
+    return Math.floor(sum / arr.length);
 };
 
 console.log(getAverageValue(allСashbox));
