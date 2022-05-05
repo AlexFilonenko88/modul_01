@@ -3,22 +3,27 @@
 const randomNumberGenerator = (n, m, x, l) => {
     const result = [];
 
+    let min = 0;
+    let max = 0;
+
+    if (n < m) {
+        min = n;
+        max = m;
+    } else {
+        min = m;
+        max = n;
+    };
+
     for (let i = 0; i < x; i += 1) {
-        if (l === 'even') {
-             result.push(Math.round(Math.random() * (m - n + 1) + n) % 2 === 0);
-        }if (l === 'odd') {
-             result.push(Math.round(Math.random() * (m - n + 1) + n) % 2 !== 0);
-        } if (n > 0 && m > 0) {
-            result.push(Math.round(Math.random() * (m - n + 1) + n));
-        } if (n < 0 && m < 0) {
-            result.push(Math.round(Math.random() * (m - n + 1) + n));
-        } if (n > m) {
-            result.push(Math.round(Math.random() * (m - n + 1) + n));
-        } if (n < m) {
-            result.push(Math.round(Math.random() * (m - n + 1) + n));
-        } 
-        
-    }
+        result.push(Math.floor(Math.random() * (max - min + 1)) + min);
+    };
+
+    if (l === 'even') {
+        return result.filter(item => item % 2 === 0);
+    };
+    if (l === 'odd') {
+        return result.filter(item => item % 2 !== 0);
+    };
 
     return result;
 };
