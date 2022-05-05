@@ -17,7 +17,7 @@ const leapНear = (n, m) => {
 //             result.push(Math.round(Math.random() * (m - n + 1) + n));
 //         } if (n > m) {
 //             result.push(Math.round(Math.random() * (m - n + 1) + n));
-//         }if (n < m) {
+//         }if (n < m) {git 
 //             result.push(Math.round(Math.random() * (m - n + 1) + n));
 //         } 
         
