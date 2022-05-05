@@ -1,19 +1,27 @@
 'use strict'
 
-const randomNumberGenerator = (n, m, l) => {
-    const randomNumber = [];
+const randomNumberGenerator = (n, m, x, l) => {
+    const result = [];
 
-    if (n > 0 && m > 0) {
-        randomNumber.push(Math.round(Math.random() * (m - n + 1) + n));
-    } else if (l === 'even') {
-        randomNumber.push(Math.round(Math.random() * (m - n + 1) + n) % 2 === 0);
-    }  else if (l === 'odd') {
-        randomNumber.push(Math.round(Math.random() * (m - n + 1) + n) % 2 !== 0);
-    } else {
-        console.log("Введен отрицательный дипазон");
+    for (let i = 0; i < x; i += 1) {
+        if (l === 'even') {
+             result.push(Math.round(Math.random() * (m - n + 1) + n) % 2 === 0);
+        }if (l === 'odd') {
+             result.push(Math.round(Math.random() * (m - n + 1) + n) % 2 !== 0);
+        } if (n > 0 && m > 0) {
+            result.push(Math.round(Math.random() * (m - n + 1) + n));
+        } if (n < 0 && m < 0) {
+            result.push(Math.round(Math.random() * (m - n + 1) + n));
+        } if (n > m) {
+            result.push(Math.round(Math.random() * (m - n + 1) + n));
+        } if (n < m) {
+            result.push(Math.round(Math.random() * (m - n + 1) + n));
+        } 
+        
     }
-    return randomNumber;
+
+    return result;
 };
 
-console.log(randomNumberGenerator(5, 6, 'even'));
-// console.log(randomNumberGenerator(5, 2, 'odd'));
+console.log(randomNumberGenerator(1, 6, 2, 'even'));
+console.log(randomNumberGenerator(5, 2, 2, 'odd'));
